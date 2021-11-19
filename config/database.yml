@@ -12,5 +12,5 @@ test:
   database: rails-watch-list_test
 
 production:
-<<: *default
-url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+  <<: *default
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
