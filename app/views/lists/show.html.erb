@@ -1,4 +1,7 @@
 <h1>Lists#show</h1>
 <ul class="list-group">
-  <li class="list-group-item"><%= @list.name %></li>
+  <li class="list-group-item"><i class="far fa-list-alt"></i> - <%= @list.name %></li>
 </ul>
+<%= link_to 'Create a new Bookmark', new_list_bookmark_path(params[:id]), class:"btn btn-primary mt-2"%>
+<br>
+<%= link_to 'Back to all list', lists_path, class:"btn btn-secondary mt-2"%>
