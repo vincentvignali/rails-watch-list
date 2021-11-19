@@ -2,7 +2,7 @@
 
 
 <ul class="list-group">
-  <% if @list.bookmarks.empty? == true %>
+  <% if @list.bookmarks.empty? != true %>
     <% @list.bookmarks.each do |bookmark| %>
       <li class="list-group-item">
       <img style="object-fit: contain; height: 100px; width:100px;" src="<%= bookmark.movie.poster_url %>" alt="test">
