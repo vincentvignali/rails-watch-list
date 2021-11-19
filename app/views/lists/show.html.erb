@@ -1,7 +1,22 @@
-<h1>Lists#show</h1>
+<h1><i class="far fa-list-alt"></i> - <%= @list.name %></h1>
+
+
 <ul class="list-group">
-  <li class="list-group-item"><i class="far fa-list-alt"></i> - <%= @list.name %></li>
+  <% if @list.bookmarks.empty? == true %>
+    <% @list.bookmarks.each do |bookmark| %>
+      <li class="list-group-item">
+      <img style="object-fit: contain; height: 100px; width:100px;" src="<%= bookmark.movie.poster_url %>" alt="test">
+      <i class="fas fa-pencil-alt"></i>   <strong><em>Notes :</em></strong>   <%= bookmark.comment %>
+      </li>
+    <% end %>
+  <% else %>
+      <li class="list-group-item d-flex justify-center align-items-center">
+      <i class="fas fa-user-astronaut mr-3"></i>
+      <strong><em>... It's empty here ...</em></strong>
+      </li>
+  <% end %>
 </ul>
-<%= link_to 'Create a new Bookmark', new_list_bookmark_path(params[:id]), class:"btn btn-primary mt-2"%>
+
+<%= link_to 'Add a Bookmark', new_list_bookmark_path(params[:id]), class:"btn btn-primary mt-2"%>
 <br>
 <%= link_to 'Back to all list', lists_path, class:"btn btn-secondary mt-2"%>
